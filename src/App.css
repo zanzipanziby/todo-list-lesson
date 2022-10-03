@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+
 .App {
   padding: 30px;
   display: flex;
@@ -5,4 +12,35 @@
 
 .App > div {
   margin-right: 50px;
+}
+.isDone {
+  text-decoration: line-through;
+  font-weight: bold;
+  color: limegreen;
+}
+
+.notIsDone {
+  font-weight: bold;
+  color: hotpink;
+}
+
+.activeBtn {
+  background-color: darkolivegreen;
+  color: white;
+  padding: 10px;
+  margin-right: 5px;
+}
+.btn {
+  background-color: aqua ;
+  color: white;
+  cursor: pointer;
+  border-radius: 2px;
+  border: none;
+  padding: 10px;
+  margin-right: 5px;
+
+}
+.error {
+  border: 2px solid hotpink;
+  outline: none;
 }

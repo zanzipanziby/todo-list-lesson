@@ -24,8 +24,6 @@ function App() {
         {id: v1(), title: 'Redux', isDone: false},
         {id: v1(), title: 'GraphQL', isDone: false}
     ])
-
-
     // Функция для удаления таски
     const removeTask = (taskId: string) => {
         setTasks(tasks.filter((t) => t.id !== taskId))
@@ -70,7 +68,10 @@ function App() {
         }
         setTasks([newTask, ...tasks])
     }
-
+    const changeTaskStatus = (taskId:string, newStatus: boolean) => {
+        const updatedTasks: Array<TasksType> = tasks.map(t => t.id ===taskId ? {...t, isDone: newStatus}: t)
+        setTasks(updatedTasks)
+    }
     // GUI
     return (
         <div className="App">
@@ -80,6 +81,8 @@ function App() {
                 removeTasks={removeTask}
                 changeFilter={changeFilter}
                 addTask={addTask}
+                changeTaskStatus ={changeTaskStatus}
+                filter={filter}
 
             />
         </div>
